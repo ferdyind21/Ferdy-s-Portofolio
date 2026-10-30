@@ -793,11 +793,8 @@
                     showToast('Message Sent!', 'Thank you! Your message has been sent to ferdyaciu@gmail.com.');
                     form.reset();
                 } else {
-                    if (accessKeyInput && accessKeyInput.value === 'f088eb1d-2803-4b33-9233-152d925cdce7') {
-                        showToast('Setup Needed', 'Please paste your free Web3Forms Access Key into index.html to receive emails.');
-                    } else {
-                        showToast('Submission Notice', data.message || 'Could not send message. Please try again.');
-                    }
+                    console.error('Web3Forms error:', data);
+                    showToast('Failed to Send', data.message || 'Could not send message. Please try again.');
                 }
             } catch (error) {
                 showToast('Sent Successfully!', 'Thank you for reaching out. I will respond to your email soon.');
